@@ -1,0 +1,7 @@
+<main color="secondary">
+    <mat-grid-list [cols]="breakpoint" rowHeight="5:2" (window:resize)="onResize($event)">
+        <mat-grid-tile *ngFor="let l of listado">
+            <app-card [card]="l" (pokemon)="singlePokemon"></app-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</main>
