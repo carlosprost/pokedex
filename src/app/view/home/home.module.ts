@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { HeaderModule } from "../../components/header/header.module";
 import { MaterialModule } from 'src/app/material/material.module';
 import { ListadoPokemonModule } from '../../components/listado-pokemon/listado-pokemon.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,7 @@ import { ListadoPokemonModule } from '../../components/listado-pokemon/listado-p
     ],
     imports: [
         CommonModule,
+        ReactiveFormsModule,
         HomeRoutingModule,
         HeaderModule,
         MaterialModule,

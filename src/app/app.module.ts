@@ -8,6 +8,7 @@ import { MaterialModule } from './material/material.module';
 import { HomeModule } from './view/home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SinglePokemonModule } from './view/single-pokemon/single-pokemon.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SinglePokemonModule } from './view/single-pokemon/single-pokemon.module
     BrowserAnimationsModule,
     MaterialModule,
     HomeModule,
+    ReactiveFormsModule,
     HttpClientModule,
     SinglePokemonModule
   ],

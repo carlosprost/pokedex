@@ -27,6 +27,9 @@ export class SinglePokemonComponent {
       
       this.pokemon.push(data)
     })
+
+    console.log(this.pokemon);
+    
   }
 
   volver(){

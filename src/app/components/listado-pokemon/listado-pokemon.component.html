@@ -1,7 +1,24 @@
-<main color="secondary">
-    <mat-grid-list [cols]="breakpoint" rowHeight="5:2" (window:resize)="onResize($event)">
-        <mat-grid-tile *ngFor="let l of listado">
-            <app-card [card]="l" (pokemon)="singlePokemon"></app-card>
-        </mat-grid-tile>
-    </mat-grid-list>
-</main>
+<section class="pokedex" color="secondary">
+  <div class="search">
+    <form (submit)="getPokemon($event)">
+      <input
+        type="text"
+        placeholder="Nombre o ID"
+        [formControl]="pokemonSearch"
+      />
+      <button mat-fab color="warn" type="submit">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+    
+  </div>
+  <mat-grid-list
+    [cols]="breakpoint"
+    rowHeight="5:2"
+    (window:resize)="onResize($event)"
+  >
+    <mat-grid-tile *ngFor="let l of listado">
+      <app-card [card]="l" (pokemon)="(singlePokemon)"></app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>

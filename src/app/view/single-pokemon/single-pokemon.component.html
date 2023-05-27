@@ -1,20 +1,66 @@
-<main>
-    <div class="container">
-        <section class="toolbar">
-            <button mat-button color="accent" (click)="volver()">
-                <mat-icon>arrow_back</mat-icon>
-            </button>
-        </section>
-        <section class="datos">
-            <section class="dato">
-                <h1><strong>{{pokemon[0].name.toUpperCase()}}</strong></h1>
-                <p>Orden: {{pokemon[0].order}}</p>
-                <p>Id: {{pokemon[0].id}}</p>
-            </section>
-            <section class="imagen">
-                <img src="{{pokemon[0].sprites.other.dream_world.front_default}}" alt="pokemon {{pokemon[0].name}} back">
-            </section>
-        </section>
-        
-    </div>
-</main>
+<div class="container-single-pokemon">
+    <section class="toolbar">
+      <button mat-button color="accent" (click)="volver()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </section>
+    <section class="cabecera-datos" *ngFor="let poke of pokemon">
+      <section class="dato">
+        <h1>
+          <strong>{{ poke.name.toUpperCase() }}</strong>
+        </h1>
+        <p>Orden: {{ poke.order }}</p>
+        <p>Id: {{ poke.id }}</p>
+      </section>
+      <section class="imagen">
+        <img
+          src="{{ poke.sprites.other.dream_world.front_default }}"
+          alt="pokemon {{ poke.name }} back"
+        />
+      </section>
+    </section>
+
+    <section class="contenido-pokemon" *ngFor="let poke of pokemon">
+      <div class="medidas">
+        <div class="peso">
+          <h3>Peso</h3>
+          <p>{{ poke.weight }}</p>
+        </div>
+        <div class="altura">
+          <h3>Altura</h3>
+          <p>{{ poke.height }}</p>
+        </div>
+      </div>
+      <div class="poder">
+        <h3>Poder</h3>
+        <div class="stat">
+            <div *ngFor="let stat of poke.stats">
+                <h3>{{ stat.stat.name }}</h3>
+                <p>{{ stat.base_stat }}</p>
+            </div>
+        </div>
+      </div>
+      <div class="ataque">
+        <h3>Ataques</h3>
+        <div>
+            <div class="habilidad">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li *ngFor="let habilidad of poke.abilities">
+                    {{ habilidad.ability.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="movimiento">
+                <h3>Movimientos</h3>
+                <ul>
+                    <li *ngFor="let movimiento of poke.moves">
+                    {{ movimiento.move.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
