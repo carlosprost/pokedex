@@ -37,7 +37,7 @@ export class ListadoPokemonComponent {
   getPokemon(event: Event) {
     event.preventDefault();
 
-    this.router.navigate(['/', this.pokemonSearch.value])
+    this.router.navigate(['/', this.pokemonSearch.value?.toLowerCase()])
     
   }
 
